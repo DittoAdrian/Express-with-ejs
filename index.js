@@ -80,6 +80,4 @@ app.get('/order/edit/:item',(req,res)=>{
     res.render('editData',{dataParams})
 })
 
-app.listen(4040,()=>{
-    console.log('listening to port 4040')
-})
+module.exports = app;
