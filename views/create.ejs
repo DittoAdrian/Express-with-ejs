@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/order/create" method="POST">
+        <section style="display: flex; flex-direction: column;">
+            <label for="">Nama Barang</label>
+            <input type="text" placeholder="Nama Barang" name="item" required>
+        </section>
+        <section style="display: flex; flex-direction: column;">
+            <label for="">Harga</label>
+            <input type="number" name="price" required>
+        </section>
+        <section style="display: flex; flex-direction: column;">
+            <label for="">Deskripsi</label>
+            <input type="text" name="deskripsi" required>
+        </section>
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/order/<%= dataParams.item %>?_method=PATCH" method="POST">
+        <section>
+            <label for="item">Item</label>
+            <input type="text" id="item" name="item" value="<%= dataParams.item %>" readonly>
+        </section>
+    
+        <section>
+            <label for="price">Price</label>
+            <input type="number" id="price" name="price" value="<%= dataParams.price %>">
+        </section>
+    
+        <section>
+            <label for="deskripsi">Deskripsi</label>
+            <input type="text" id="deskripsi" name="deskripsi" value="<%= dataParams.deskripsi %>">
+        </section>
+        
+        <button type="submit">Update</button>
+    </form>
+    <a href="/order">
+        <button>Back</button>
+    </a>
+
+    <script>
+        
+    </script>
+</body>
+</html>

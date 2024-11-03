@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Halaman Order</h1>
+    <ul>
+        <% for(let item of barang){%>
+            <li>
+                <p><%=item.item%> : <%=item.price%> <a href="order/<%=item.item%>">detail</a></p>
+                <a href="order/edit/<%=item.item%>"><button>edit</button></a>
+                <button onClick="deleteData('<%= item.item %>')">Hapus</button>
+            </li>
+            <%}%>
+
+            
+
+    </ul>
+
+    <a href="order/create">
+        <button>Create</button>
+    </a>
+    <script>
+        const deleteData = async (item) => {
+        try {
+            
+            const response = await fetch(`http://localhost:4040/order/${item}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            location.reload();
+            if (!response.ok) {
+                throw new Error(`Error: ${response.status}`);
+            }
+            return result;
+        } catch (error) {
+            console.error('Failed to delete data:', error);
+        }
+}
+    </script>
+</body>
+</html>

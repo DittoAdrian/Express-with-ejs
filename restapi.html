@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      style="background-color: tomato"
+      action="http://localhost:3030/order"
+      method="GET"
+    >
+      <input type="text" name="item" />
+      <input type="number" name="quantity" />
+      <button type="submit">button</button>
+    </form>
+
+    <form action="http://localhost:4040/order" method="POST">
+      <input type="text" name="item" />
+      <input type="number" name="quantity" />
+      <button type="submit">button</button>
+    </form>
+  </body>
+</html>
