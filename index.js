@@ -69,19 +69,8 @@ app.post('/order/:item',(req,res)=>{
 
 app.delete('/order/:item',(req,res)=>{
     const {item} = req.params;
-    const index = barang.find((x)=>item === x.item)
-    if (index){
-        const deletedData = barang.filter((x)=>{
-            if (x.item != item){
-                return ({item: x.item, price: x.price})
-            } 
-        })
-        barang = deletedData
-        res.redirect('/');
-    }
-    else {
-        res.status(404).json({message:'Data not found'})
-    }
+    barang = barang.filter((x)=>x.item != item)
+    res.redirect('/order')
 })
 
 app.get('/order/edit/:item',(req,res)=>{
